@@ -54,6 +54,9 @@ Future<void> getListTodo() async{
    _todos = datas;
    notifyListeners();
  }
+ deleteAll() async{
+  await service.deleteAll();
+ }
 
 }
 

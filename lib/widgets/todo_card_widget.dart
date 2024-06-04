@@ -130,7 +130,7 @@ class _TodoCardWidgetState extends State<TodoCardWidget> {
                       ),
                     ),
                   ],
-                )
+                ),
               ],
             ),
           ),

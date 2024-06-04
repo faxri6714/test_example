@@ -4,6 +4,7 @@ class TodoEntity {
   final String description;
   final DateTime createdAt;
   final bool isDone;
+  final DateTime updateAt;
 
   TodoEntity({
     required this.id,
@@ -11,6 +12,7 @@ class TodoEntity {
     required this.description,
     required this.createdAt,
     required this.isDone,
+    required this.updateAt,
   });
 
   factory TodoEntity.empty() {
@@ -19,7 +21,9 @@ class TodoEntity {
       title: "",
       description: "",
       createdAt: DateTime.now(),
+      updateAt: DateTime.now(),
       isDone: false,
+
     );
   }
 
@@ -36,6 +40,7 @@ class TodoEntity {
       description: description ?? this.description,
       createdAt: createdAt ?? this.createdAt,
       isDone: isDone ?? this.isDone,
+      updateAt: DateTime.now(),
     );
   }
 
@@ -46,6 +51,7 @@ class TodoEntity {
     title : $title
     description : $description
     createdAt : $createdAt
+    updateAt : $updateAt
     isDone : $isDone
     """;
   }

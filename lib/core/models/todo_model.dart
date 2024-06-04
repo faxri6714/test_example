@@ -7,6 +7,7 @@ class TodoModel extends TodoEntity {
     required super.description,
     required super.createdAt,
     required super.isDone,
+    required super.updateAt,
   });
 
   factory TodoModel.fromEntity(TodoEntity entity) {
@@ -16,6 +17,7 @@ class TodoModel extends TodoEntity {
       description: entity.description,
       createdAt: entity.createdAt,
       isDone: entity.isDone,
+      updateAt: entity.updateAt,
     );
   }
 
@@ -25,6 +27,7 @@ class TodoModel extends TodoEntity {
       title: json['title'],
       description: json['description'],
       createdAt: DateTime.parse(json['createdAt']),
+      updateAt: DateTime.parse(json['updateAt']),
       isDone: json['isDone'],
     );
   }
@@ -36,7 +39,9 @@ class TodoModel extends TodoEntity {
     data['title'] = title;
     data['description'] = description;
     data['createdAt'] = createdAt.toString();
+    data['updateAt'] = updateAt.toString();
     data['isDone'] = isDone;
+
 
     return data;
   }
